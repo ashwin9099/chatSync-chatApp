@@ -65,9 +65,9 @@ export default function Home() {
         </div>
       </section>
       {/* Call to Action Section */}
-      <section className="bg-gray-800 py-16 text-white text-center">
+      <section className="bg-gray-800 py-14 text-white text-center">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold mb-4">Ready to Connect?</h2>
+          <h2 className="text-2xl font-bold mb-4">Ready to Connect?</h2>
           <p className="text-xl mb-8">
             Download ChatSync today and start chatting!
           </p>

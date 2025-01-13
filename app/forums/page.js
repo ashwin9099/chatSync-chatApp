@@ -1,52 +1,71 @@
 import React from "react";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 const topics = [
   {
-    text: "javascript",
-    img: "/js.png",
-    description: "Discuss anything about JavaScript",
+    text: "Java",
+    img: "/java.webp",
+    description: "Discuss anything about Java!",
+    slug: "java-discuss",
   },
   {
-    text: "HTML & CSS",
-    img: "/html.png",
-    description: "Build the foundation of web pages with structure and style",
+    text: "Python",
+    img: "/python.png",
+    description: "Build the foundation of machine learning models",
+    slug: "python-discuss",
+  },
+  {
+    text: "JavaScript",
+    img: "/javascript.png",
+    description: "Learn and discuss about JavaScript frameworks",
+    slug: "js-discuss",
   },
   {
     text: "React",
-    img: "/react.png",
-    description: "Create interactive and reusable UI components",
+    img: "/react.svg",
+    description: "Discuss about React and its reusable components",
+    slug: "react-discuss",
+  },
+  {
+    text: "Spring",
+    img: "/spring.png",
+    description:
+      "Level up your Java code and explore what Spring can do for you.",
+    slug: "spring-discuss",
   },
   {
     text: "Git",
     img: "/git.png",
-    description: "Version control system for collaborative development",
-  },
-  {
-    text: "Web APIs",
-    img: "/api.png",
-    description: "Interact with web services and functionalities",
+    description: "Interact on version control and code management",
+    slug: "git-discuss",
   },
 ];
 const forums = () => {
   return (
-    <div className="container bg-red-500 mx-auto my-24">
-      <h1>Discussion Forums</h1>
-      <div className="flex flex-wrap">
+    <div className="mx-auto my-20">
+      <h1 className="text-center text-3xl font-bold font-mono p-5">
+        Discussion Forums
+      </h1>
+      <div className="flex flex-wrap justify-center">
         {topics.map((topic) => {
           return (
             <div
               key={topic.img}
-              className="shadow-lg bg-slate-500 w-1/4 p-3 m-4 flex flex-col items-center justify-center"
+              className="shadow-xl rounded-lg bg-slate-100 w-1/4 px-4 py-10 m-5 flex flex-col items-center justify-center"
             >
               <Image
                 src={topic.img}
                 alt="topic"
-                width={34}
-                height={34}
-                className=""
+                width={50}
+                height={50}
+                className="rounded-full object-cover border-2"
               ></Image>
-              <h2>{topic.text}</h2>
-              <p>{topic.description}</p>
+              <h2 className="text-xl p-2">{topic.text}</h2>
+              <p className="text text-sm p-2">{topic.description}</p>
+              <Link href={"/chat/${topic.slug}"}>
+                <Button className="mt-4">Discuss Now</Button>
+              </Link>
             </div>
           );
         })}

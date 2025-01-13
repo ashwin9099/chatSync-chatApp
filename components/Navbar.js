@@ -1,16 +1,24 @@
 import React from "react";
-
-// components/Navbar.js
 import Link from "next/link";
+import Image from "next/image"; // Import Image
 import { UserButton } from "@clerk/nextjs";
 
-const Navbar = () => {
+const Navbar = ({ logoSrc = "/logo.png", logoAlt = "ChatSync" }) => {
   return (
     <nav className="bg-gray-800 p-4 text-white">
       <div className="container mx-auto flex justify-between items-center">
-        {/* Logo/Brand */}
-        <Link href="/" className="text-xl font-bold">
-          ChatSync
+        <Link href="/" className="flex items-center">
+          {" "}
+          {/* Wrap logo and title in a flex container */}
+          {logoSrc && (
+            <div className="relative h-8 w-10 mr-2">
+              {" "}
+              {/* Logo container with margin */}
+              <Image src={logoSrc} alt={logoAlt || "Logo"} layout="fill" />
+            </div>
+          )}
+          <span className="text-xl font-bold">ChatSync</span>{" "}
+          {/* Title as a span */}
         </Link>
 
         {/* Navigation Links */}
@@ -27,9 +35,7 @@ const Navbar = () => {
           <Link href="/contact" className="hover:text-gray-400">
             Contact
           </Link>
-          <li className="flex justify-center items-center h-auto w-auto">
-            <UserButton />
-          </li>
+          <UserButton />
         </div>
       </div>
     </nav>
