@@ -63,7 +63,7 @@ const forums = () => {
               ></Image>
               <h2 className="text-xl p-2">{topic.text}</h2>
               <p className="text text-sm p-2">{topic.description}</p>
-              <Link href={"/chat/${topic.slug}"}>
+              <Link href={`/forum/${topic.slug}`}>
                 <Button className="mt-4">Discuss Now</Button>
               </Link>
             </div>
