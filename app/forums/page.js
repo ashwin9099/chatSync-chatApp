@@ -7,38 +7,38 @@ const topics = [
     text: "Java",
     img: "/java.webp",
     description: "Discuss anything about Java!",
-    slug: "java-discuss",
+    slug: "java",
   },
   {
     text: "Python",
     img: "/python.png",
     description: "Build the foundation of machine learning models",
-    slug: "python-discuss",
+    slug: "python",
   },
   {
     text: "JavaScript",
     img: "/javascript.png",
     description: "Learn and discuss about JavaScript frameworks",
-    slug: "js-discuss",
+    slug: "js",
   },
   {
     text: "React",
     img: "/react.svg",
     description: "Discuss about React and its reusable components",
-    slug: "react-discuss",
+    slug: "react",
   },
   {
     text: "Spring",
     img: "/spring.png",
     description:
       "Level up your Java code and explore what Spring can do for you.",
-    slug: "spring-discuss",
+    slug: "spring",
   },
   {
     text: "Git",
     img: "/git.png",
     description: "Interact on version control and code management",
-    slug: "git-discuss",
+    slug: "git",
   },
 ];
 const forums = () => {

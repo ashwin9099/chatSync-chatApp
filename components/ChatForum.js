@@ -1,22 +1,32 @@
 "use client";
+import { useState, useEffect } from "react";
+import {
+  useCreateChatClient,
+  Chat,
+  Channel,
+  ChannelHeader,
+  MessageInput,
+  MessageList,
+  Thread,
+  Window,
+} from "stream-chat-react";
 
-import { useState, useEffect } from 'react';
-import { useCreateChatClient, Chat, Channel, ChannelHeader, MessageInput, MessageList, Thread, Window } from 'stream-chat-react';
+import "stream-chat-react/dist/css/v2/index.css";
 
-import 'stream-chat-react/dist/css/v2/index.css';
+import React from "react";
 
-const apiKey = 'pgw8ujauwyxa';
-const userId = 'white-union-4';
-const userName = 'white';
-const userToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoid2hpdGUtdW5pb24tNCIsImV4cCI6MTczNjc2OTYxNH0.3mH05jjvhK_yBK0_3X0eXIyvTwUfK6Pvgl1s1S9cOtg';
+const ChatForum = ({ clerkUser, slug }) => {
+  const apiKey = "pgw8ujauwyxa";
+  const userId = clerkUser.id;
+  const userName = clerkUser.username;
+  const userToken = clerkUser.token;
 
-const user = {
-  id: userId,
-  name: userName,
-  image: `https://getstream.io/random_png/?name=${userName}`,
-};
+  const user = {
+    id: userId,
+    name: userName,
+    image: `https://getstream.io/random_png/?name=${userName}`,
+  };
 
-export default function ChatForum() {
   const [channel, setChannel] = useState();
   const client = useCreateChatClient({
     apiKey,
@@ -27,9 +37,9 @@ export default function ChatForum() {
   useEffect(() => {
     if (!client) return;
 
-    const channel = client.channel('messaging', 'custom_channel_id', {
-      image: 'https://getstream.io/random_png/?name=react',
-      name: 'Talk about React',
+    const channel = client.channel("messaging", slug, {
+      image: "https://getstream.io/random_png/?name=react",
+      name: slug.toUpperCase()+" Discussions...", 
       members: [userId],
     });
 
@@ -51,3 +61,5 @@ export default function ChatForum() {
     </Chat>
   );
 };
+
+export default ChatForum;

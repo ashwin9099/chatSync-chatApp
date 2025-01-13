@@ -4,12 +4,12 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image"; // Import Image
 import { UserButton } from "@clerk/nextjs";
-import { useUser } from "@clerk/clerk-react";
+// import { useUser } from "@clerk/clerk-react";
 
 const Navbar = ({ logoSrc = "/logo.png", logoAlt = "ChatSync" }) => {
 
-  const user = useUser()
-  console.log(user.user?.id)
+  // const user = useUser()
+  // console.log(user.user)
   return (
     <nav className="bg-gray-800 p-4 text-white">
       <div className="container mx-auto flex justify-between items-center">
