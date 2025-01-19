@@ -11,7 +11,7 @@ export async function POST(request) {
   const serverClient = StreamChat.getInstance(api_key, api_secret);
   const user = await request.json();
 
-  // Create User Token
+  // Create User Tokensqw40
   const token = serverClient.createToken(c);
   // console.log("token = ",token);
   console.log("A New USER BEEN CREATED!  ", token);
